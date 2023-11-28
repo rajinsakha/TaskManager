@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+.section-padding{
+padding: 4rem 6rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-btn{
+  width: 45px;
+  height: 32px;
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  border-radius: 0px 5px 5px 0px; 
+  cursor: pointer;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-btn:hover{
+  background-color: lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
+.delete-btn{
+  padding: 0.5rem;
+  background-color: orangered;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover{
+  background-color: red;
+}
+
+.container{
   min-height: 100vh;
+  padding: 10px;
+  background: var(--color-bgblue);
+}
+
+.task-app{
+  width: 100%;
+  max-width: 550px;
+  height: 500px;
+  background-color: #F9F7F7;
+  margin: 80px auto 20px; 
+  border-radius: 20px;
+}
+
+.tasklist{
+  padding: 1rem 3rem;
+  max-height: 400px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.task-item{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 4rem;
+  background-color: var(--color-lightblue);
+  border: none;
+  border-radius: 5px;
+}
+
+.task-item h3{
+  flex: 1;
+}
+
+.addTask{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  margin-bottom: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+#title{
+  height: 32px;
+  width: 250px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid rgba(177, 177, 177, 0.40);
+  outline: none;
+  padding: 6px 12px;
+  background-color: var(--color-lightblue);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-name{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+input[type="checkbox"]{
+ accent-color: green;
+ cursor: pointer;
+}
+
+.line{
+  width: 500px;
+height: 1px; 
+background: rgba(0, 0, 0, 0.50); 
+}
+
+.tasklist-title{
+  text-align: center;
+  padding: 1rem;
 }

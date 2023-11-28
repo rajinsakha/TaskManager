@@ -16,6 +16,8 @@ export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () =>{
     return response.data
 })
 
+
+
 export const tasksSlice = createSlice({
     name:'tasks',
     initialState,
@@ -23,7 +25,7 @@ export const tasksSlice = createSlice({
         // Function created for adding task
         taskAdded:{
             reducer(state, action){
-                state.tasks.push(action.payload);
+                state.tasks = [action.payload,...state.tasks];
             },
             // This allows us to directly pass the required arguments when dispatching 
             prepare(title, status){
@@ -33,6 +35,16 @@ export const tasksSlice = createSlice({
                         title,
                         status
                     }
+                }
+            }
+        },
+        taskToggled:{
+            reducer(state, action){
+                // Searching the id of the task to be toggled
+                const toggledTask = state.tasks.find((task)=> task.id === action.payload);
+                // If there exists the toggledTask, changing its boolean status from true to false or false to true
+                if(toggledTask){
+                    toggledTask.status = !toggledTask.status;
                 }
             }
         },
@@ -61,7 +73,7 @@ export const tasksSlice = createSlice({
       })
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.tasks = state.tasks.concat(action.payload); // Update tasks state with fetched data
+        state.tasks = action.payload // Update tasks state with fetched data
       })
       .addCase(fetchTasks.rejected, (state, action) => {
         state.status = 'failed';
@@ -69,14 +81,13 @@ export const tasksSlice = createSlice({
       });     
     }
    
-     
-
 })
 
 
 export const selectAllTasks = (state) => state.tasks.tasks;
 export const getTasksStatus = (state) => state.tasks.status;
+export const getErrors = (state) => state.tasks.error;
 
-export const {taskAdded, taskDeleted} = tasksSlice.actions;
+export const {taskAdded, taskDeleted, taskToggled} = tasksSlice.actions;
 
 export default tasksSlice.reducer;

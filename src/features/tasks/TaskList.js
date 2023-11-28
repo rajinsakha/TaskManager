@@ -1,59 +1,50 @@
 import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
-import { selectAllTasks, fetchTasks, getTasksStatus } from './tasksSlice';
-import { taskDeleted } from './tasksSlice';
-import axios from 'axios';
+import { selectAllTasks, fetchTasks, getTasksStatus, getErrors } from './tasksSlice';
+import Task from './Task';
+
 
 const TaskList = () => {
     
-    const POSTS_URL = 'https://jsonplaceholder.typicode.com/todos'
-
     const tasks = useSelector(selectAllTasks);
     const taskStatus = useSelector(getTasksStatus);
+    const errors = useSelector(getErrors);
     const dispatch = useDispatch();
-
+    let content;
 
     useEffect(() => {
-        console.log(taskStatus);
         // Fetch tasks when the component mounts
         if(taskStatus === 'idle'){
             dispatch(fetchTasks());
         }
        
-      }, [taskStatus, dispatch]); // You might have additional dependencies here
+      }, [taskStatus, dispatch]); 
 
-    let content;
-
-    const handleDelete = async(item)=>{
-        axios.delete(`${POSTS_URL}/${item.id}`).then(()=>{
-            dispatch(taskDeleted(item.id))
-        })
-        .catch((error)=>console.log(error))
-    }
-
-    if(!tasks){
-        content = <h1>No Task List Found</h1>
-    }else{
-        content =  tasks.map((item)=>{
-            return (
-               <div key={item}>
-                <p>{item.id}</p>
-                   <h1>{item.title}</h1>
-                   <button onClick={()=>handleDelete(item)}>Delete</button>
-               </div>
-           )
-         }
+   
+    if(taskStatus === 'loading'){
+        content = <h1>...Loading</h1>
+    }else if(taskStatus === 'succeeded'){
+        content =  tasks.map((task)=><Task key={task.id} task={task} />
          )
+    }
+    else if(taskStatus === 'failed'){
+        content = <p>{errors}</p>
     }
 
    
  
 
   return (
-    <div>
-        {content}
-     
-    </div>
+   <>
+   <h1 className='tasklist-title'>TaskList</h1>
+   <div className='tasklist'>
+       
+       {content}
+   </div>
+ 
+   </>
+      
+   
   )
 }
 
