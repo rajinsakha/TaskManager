@@ -21,17 +21,16 @@ To run this application locally, follow these steps:
 
 
 ### Install Dependencies
-  `npm install`
-  `npm install react-router-dom`
-  `npm install @reduxjs/toolkit`
-  `npm install react-redux`
+  `npm install`  
+  `npm install react-router-dom`  
+  `npm install @reduxjs/toolkit`  
+  `npm install react-redux`  
 
 ### Start the Development Server
     `npm start`
 
 
 ### Project Structure
-
 The project directory structure looks like this:
     src/: Contains the React components and application logic.
     public/: Contains static assets and the HTML template.
