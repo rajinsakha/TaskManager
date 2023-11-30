@@ -13,8 +13,6 @@ Before running this application, ensure you have the following installed:
 To run this application locally, follow these steps:
 
 ### Clone this Repository
-
-You can clone this respository using following command:
     `git clone https://github.com/your-username/TaskManager.git`
 
 
@@ -24,11 +22,8 @@ You can clone this respository using following command:
 
 ### Install Dependencies
   `npm install`
-  You need to install react-router-dom for navigating through pages
   `npm install react-router-dom`
-  You need to install redux toolkit since this application uses redux for state management.
   `npm install @reduxjs/toolkit`
-  You need to install React bindings.
   `npm install react-redux`
 
 ### Start the Development Server
