@@ -1,70 +1,52 @@
 # Task Manager Web Application
 
-This project is created using React.js
+This is a simple task management web application built using React.js. This application allows users to manage tasks by displaying a list of tasks, adding tasks, marking tasks as completed or pending and deleting tasks.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before running this application, ensure you have the following installed:
+1. Node.js: Ensure that node.js and npm are installed.
+2. Git: Ensure that git is installed. 
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run this application locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Clone this Repository
 
-### `npm test`
+You can clone this respository using following command:
+    `git clone https://github.com/your-username/TaskManager.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Move into the Project Directory
+    `cd TaskManger`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Install Dependencies
+  `npm install`
+  You need to install react-router-dom for navigating through pages
+  `npm install react-router-dom`
+  You need to install redux toolkit since this application uses redux for state management.
+  `npm install @reduxjs/toolkit`
+  You need to install React bindings.
+  `npm install react-redux`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Start the Development Server
+    `npm start`
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project directory structure looks like this:
+    src/: Contains the React components and application logic.
+    public/: Contains static assets and the HTML template.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Dependencies
+    react: JavaScript library for building user interfaces.
+    react-dom: React package for working with the DOM.
+    react-router-dom: React Router library for routing in React applications.
+    redux: State management library for JavaScript applications.
+    redux-thunk: Middleware for Redux to handle asynchronous logic.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Acknowledgements
+This project uses JSONPlaceholder for simulating API calls.  

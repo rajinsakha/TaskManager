@@ -143,9 +143,10 @@ input[type="checkbox"] {
 }
 
 .line {
-  width: 518px;
+  width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
 
 .tasklist-title {
@@ -153,13 +154,6 @@ input[type="checkbox"] {
   text-align: center;
   padding-bottom: 6px;
   letter-spacing: 1px;
-}
-
-
-@media screen and (max-width: 650px) {
-  .task-app{
-    margin: 50px auto;
-  }
 }
 
 @media screen and (max-width: 450px) {
@@ -173,6 +167,10 @@ input[type="checkbox"] {
 
   #title{
     width: 220px;
+  }
+
+  .app-title{
+    font-size: 32px;
   }
 
 }
