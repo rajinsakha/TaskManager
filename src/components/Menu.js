@@ -10,9 +10,9 @@ const Menu = () => {
   return (
     <div className='menu'>
       {/* Checking the pathname, if pathname is same, change the classname to active, else empty */}
-      <Link to="/" className={location.pathname === '/' ? 'active' : ''} >All</Link>
-      <Link to="/pending" className={location.pathname === '/pending' ? 'active' : ''}>Pending</Link>
-      <Link to="/completed" className={location.pathname === '/completed' ? 'active' : ''}>Completed</Link>
+      <Link to="/TaskManager/" className={location.pathname === '/' ? 'active' : ''} >All</Link>
+      <Link to="/TaskManager/pending" className={location.pathname === '/pending' ? 'active' : ''}>Pending</Link>
+      <Link to="/TaskManager/completed" className={location.pathname === '/completed' ? 'active' : ''}>Completed</Link>
     </div>
   )
 }
