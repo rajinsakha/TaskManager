@@ -40,17 +40,17 @@ function App() {
             <AddTask />
             <Routes>
               <Route
-                path="/TaskManager/"
+                path="/"
                 element={<TaskList taskType={tasks} taskTitle="All" />}
               />
               <Route
-                path="/TaskManager/pending"
+                path="/pending"
                 element={
                   <TaskList taskType={pendingTasks} taskTitle="Pending" />
                 }
               />
                <Route
-                path="/TaskManger/completed"
+                path="/completed"
                 element={
                   <TaskList taskType={completedTasks} taskTitle="Completed" />
                 }
@@ -64,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
